@@ -1,0 +1,17 @@
+.acf-fields .acf-address-field ul {
+	margin: 0;
+}
+
+.acf-fields .acf-address-field ul + ul {
+	margin-top: 15px;
+}
+
+.acf-fields .acf-address-field li {
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0;
+}
+
+.acf-fields .acf-address-field li + li {
+	padding-left: 5px;
+}

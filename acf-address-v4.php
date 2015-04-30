@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * File: ACF 4 Address Field
+ *
+ * @package ACF\Fields
+ */
+
 class acf_field_address extends acf_field
 {
 	// vars
@@ -6,14 +13,14 @@ class acf_field_address extends acf_field
 		$defaults; // will hold default field options
 
 
-	/*
-	*  __construct
-	*
-	*  Set name / label needed for actions / filters
-	*
-	*  @since	3.6
-	*  @date	23/01/13
-	*/
+	/**
+	 * __construct
+	 *
+	 * Set name / label needed for actions / filters
+	 *
+	 * @since	3.6
+	 * @date	2013-01-23
+	 */
 
 	function __construct()
 	{
@@ -71,7 +78,7 @@ class acf_field_address extends acf_field
 				'class'         => 'country',
 				'separator'     => '',
 			),
-			// add default here to merge into your field. 
+			// add default here to merge into your field.
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
 			//'preview_size' => 'thumbnail'
 		);
@@ -89,18 +96,18 @@ class acf_field_address extends acf_field
 		);
 	}
 
-	/*
-	*  create_options()
-	*
-	*  Create extra options for your field. This is rendered when editing a field.
-	*  The value of $field['name'] can be used (like bellow) to save extra data to the $field
-	*
-	*  @type	action
-	*  @since	3.6
-	*  @date	23/01/13
-	*
-	*  @param	$field	- an array holding all the field's data
-	*/
+	/**
+	 * create_options()
+	 *
+	 * Create extra options for your field. This is rendered when editing a field.
+	 * The value of $field['name'] can be used (like bellow) to save extra data to the $field
+	 *
+	 * @type	action
+	 * @since	3.6
+	 * @date	2013-01-23
+	 *
+	 * @param	$field	- an array holding all the field's data
+	 */
 	function create_options( $field )
 	{
 		// defaults
@@ -271,7 +278,7 @@ class acf_field_address extends acf_field
 		</tr>
 
 		<style type="text/css">
-			/* Field Options Screen */
+			/** Field Options Screen */
 			tr.field_option_address .address_layout ul {
 				list-style-type: none;
 				border: 1px solid #999999;
@@ -295,7 +302,7 @@ class acf_field_address extends acf_field
 			tr.field_option_address .address_layout li.disabled {
 				display: none;
 			}
-			/* Add/Edit Post */
+			/** Add/Edit Post */
 			.postbox .address .address_row {
 				clear: both;
 			}
@@ -401,17 +408,17 @@ class acf_field_address extends acf_field
 	}
 
 
-	/*
-	*  create_field()
-	*
-	*  Create the HTML interface for your field
-	*
-	*  @param	$field - an array holding all the field's data
-	*
-	*  @type	action
-	*  @since	3.6
-	*  @date	23/01/13
-	*/
+	/**
+	 * create_field()
+	 *
+	 * Create the HTML interface for your field
+	 *
+	 * @param	$field - an array holding all the field's data
+	 *
+	 * @type	action
+	 * @since	3.6
+	 * @date	2013-01-23
+	 */
 
 	function create_field( $field )
 	{
@@ -427,7 +434,7 @@ class acf_field_address extends acf_field
 		?>
 
 		<style type="text/css">
-			/* Field Options Screen */
+			/** Field Options Screen */
 			tr.field_option_address .address_layout ul {
 				list-style-type: none;
 				border: 1px solid #999999;
@@ -451,7 +458,7 @@ class acf_field_address extends acf_field
 			tr.field_option_address .address_layout li.disabled {
 				display: none;
 			}
-			/* Add/Edit Post */
+			/** Add/Edit Post */
 			.postbox .address .address_row {
 				clear: both;
 			}
@@ -520,6 +527,5 @@ class acf_field_address extends acf_field
 	}
 
 }
-// create field
+
 new acf_field_address();
-?>
