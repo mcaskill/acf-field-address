@@ -17,27 +17,20 @@
  */
 
 /**
- * Some pre-processed useful variables.
- */
-
-$plugin = wp_normalize_path( basename( __DIR__ ) );
-$mu_plugin_dir = wp_normalize_path( WPMU_PLUGIN_DIR );
-
-/**
  * Action: Register the plugin's text domain
  *
  * @uses Action: "muplugins_loaded"
  * @uses Action: "plugins_loaded"
  */
 
-if ( ! empty( $plugin ) && 0 === strpos( $plugin, $mu_plugin_dir ) ) {
-	add_action( 'muplugins_loaded', function() use ( $plugin ) {
-		load_muplugin_textdomain( 'acf-address', $plugin . 'assets/languages' );
+if ( 0 === strpos( wp_normalize_path( __DIR__ ), wp_normalize_path( WPMU_PLUGIN_DIR ) ) ) {
+	add_action( 'muplugins_loaded', function() {
+		load_textdomain( 'acf-address', __DIR__ . '/' . ltrim( 'assets/languages', '/' ) );
 	} );
 }
 else {
-	add_action( 'plugins_loaded', function() use ( $plugin ) {
-		load_plugin_textdomain( 'acf-address', false, $plugin . 'assets/languages' );
+	add_action( 'plugins_loaded', function() {
+		load_plugin_textdomain( 'acf-address', false, basename( __DIR__ ) . '/' . ltrim( 'assets/languages', '/' ) );
 	} );
 }
 
